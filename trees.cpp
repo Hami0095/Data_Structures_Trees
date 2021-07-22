@@ -18,6 +18,8 @@ class Trees {
 	Node* root;
 	int size = 0;
 
+	// HELPER PRIVATE FUNCTIONS ;)
+	
 	void printInOrder(Node* curr) {
 		if (curr == nullptr) {
 			return;
@@ -27,14 +29,15 @@ class Trees {
 		printInOrder(curr->rchild);
 	}
 
-	void inOrderTraversal(Node* curr) {
-		if (curr == nullptr) {
-			return;
-		}
-		printInOrder(curr->lchild);
-		cout << curr->key << " " << curr->data << endl;
-		printInOrder(curr->rchild);
-	}
+	// copy for printInOrder(), ig never used ...
+	//void inOrderTraversal(Node* curr) {
+	//	if (curr == nullptr) {
+	//		return;
+	//	}
+	//	printInOrder(curr->lchild);
+	//	cout << curr->key << " " << curr->data << endl;
+	//	printInOrder(curr->rchild);
+	//}
 
 	void printPreOrder(Node* curr) {
 		if (curr == nullptr) {
@@ -151,15 +154,15 @@ public:
 		root = new Node;
 	}
 
-	void printInOrder() {
+	void printInOrder() {					      //MICROSOFT INTERVIEW QUESTION
 		printInOrder(root);
 	}
 
-	void printPreOrder() {
+	void printPreOrder() {					      //MICROSOFT INTERVIEW QUESTION
 		printPreOrder(root);
 	}
 
-	void printPostOrder() {
+	void printPostOrder() {					      //MICROSOFT INTERVIEW QUESTION
 		printPostOrder(root);
 	}
 	/*
@@ -175,7 +178,7 @@ public:
 	*	
 	*/
 	
-	bool areTreesIdentical(Trees& t) {
+	bool areTreesIdentical(Trees& t) {					      //MICROSOFT INTERVIEW QUESTION
 		return areTreesIdentical(root, t.root);
 	}
 
@@ -184,14 +187,14 @@ public:
 	/// <summary>
 	/// an Isomorphic tree is the one, which can be found in other tree in any flipped way
 	/// 
-		/// if root of both trees are nullptr -> isomorphic
+		/// if curr/root of both trees are nullptr -> isomorphic
 		/// if any one curr node is nullptr and other's tree is not null, they are not null
 		/// traverse through out the tree, in seedhy raasty sy as well as flipped rasty sy bhi
 	/// 
 	/// </summary>
 	/// <param name="t"></param>
 	/// <returns></returns>	
-	bool isIsomorphic(Trees& t) {
+	bool isIsomorphic(Trees& t) {					      //MICROSOFT INTERVIEW QUESTION
 		if (!root || !t.root) {
 			return false;
 		}
@@ -199,16 +202,16 @@ public:
 	}
 
 	// size of tree ?? 
-	int size() {
+	int size() {					      //MICROSOFT INTERVIEW QUESTION
 		return size;
 	}
 	
-	void printNodesAtHeight(int k) {
+	void printNodesAtHeight(int k) {		      //MICROSOFT INTERVIEW QUESTION		    
 		Node* curr = root;
 		printNodesAtHeight(curr, k);
 	}
 
-	void findMin() {
+	void findMin() {				      //MICROSOFT INTERVIEW QUESTION
 		cout << findMin(root)->key << endl;
 	}
 
@@ -277,7 +280,7 @@ public:
 		return max(left_Height, right_Height) + 1;
 	}
 
-	void mirrorTree() {								//MICROSOFT INTERVIEW QUESTION
+	void mirrorTree() {					//MICROSOFT INTERVIEW QUESTION
 		mirrorTree(root);
 	}
 
@@ -299,7 +302,7 @@ public:
 	}
 
 	// insertion :
-	void insert(T key, T data) {
+	void insert(T key, T data) {			        //MICROSOFT INTERVIEW QUESTION
 		if (root == nullptr) {
 			root = new Node(key, data, nullptr,nullptr, nullptr);
 			size++;
@@ -344,7 +347,7 @@ public:
 	*				and remove the inorder successor
 	* 
 	*/
-	void remove(T key) {
+	void remove(T key) {					      //MICROSOFT INTERVIEW QUESTION
 		if (!isKeyPresent(key))
 			return;
 		Node* toRemove = getNode(key);
