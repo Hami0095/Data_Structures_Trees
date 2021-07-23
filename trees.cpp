@@ -77,6 +77,7 @@ class Trees {
 			k--;
 			printNodesAtHeight(curr->lchild, k);
 			printNodesAtHeight(curr->rchild, k);
+			return k;
 		}
 	}
 
