@@ -188,7 +188,7 @@ public:
 	/// an Isomorphic tree is the one, which can be found in other tree in any flipped way
 	/// 
 		/// if curr/root of both trees are nullptr -> isomorphic
-		/// if any one curr node is nullptr and other's tree is not null, they are not null
+		/// if any one curr node is nullptr and other's tree is not null, they are not ISOMORPHIC
 		/// traverse through out the tree, in seedhy raasty sy as well as flipped rasty sy bhi
 	/// 
 	/// </summary>
