@@ -66,14 +66,15 @@ class Trees {
 		return count;
 	}
 
-	void printNodesAtHeight(Node* curr, int k) {
+	int printNodesAtHeight(Node* curr, int k) {
 		if (!curr) {
-			return;
+			return 0;
 		}
 		while (heightOfNode(curr) <= k) {
 			if (heightOfNode(curr) == k) {
 				cout << curr->key << " " << endl;
 			}
+			k--;
 			printNodesAtHeight(curr->lchild, k);
 			printNodesAtHeight(curr->rchild, k);
 		}
